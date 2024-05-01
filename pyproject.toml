@@ -1,0 +1,27 @@
+[project]
+name = "tractseg"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+
+authors = [
+    { name = "Peter Van Dyken", email = "pvandyk2@uwo.ca" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+requires-python = ">=3.8,<3.13"
+dependencies = [
+    "snakemake >= 7.20,<8",
+    "snakebids >=0.11.2",
+    "pulp < 2.8.0",
+]
+
+[project.scripts]
+tractseg = "tractseg.run:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

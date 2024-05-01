@@ -1,0 +1,16 @@
+configfile: 'config/snakebids.yml'
+include: "rules/setup.smk"
+include: "rules/transform.smk"
+include: "rules/peaks.smk"
+include: "rules/segmentation.smk"
+include: "rules/sample.smk"
+# include: "rules/qc.smk"
+
+
+rule all:
+    input:
+        inputs['param'].expand([
+            rules.sample_parameter_map.output[0],
+            # rules.qc_get_tract_boundaries.output[0],
+        ]),
+    default_target: True
